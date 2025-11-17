@@ -279,8 +279,10 @@ while True:
             i += 1
             for opcao in p["alternativas"]:
                 print(opcao)
-            reposta = input("Sua resposta: ")
-
+            letras = ["a","b","c","d","e"]
+            reposta = input("Sua resposta: ").lower().strip()
+            while resposta not in letras:
+                resposta = input("Digite apenas letras de A-E: ").lower().strip() 
             if reposta == p["certa"]:
                 print("\nAlternativa certa!! Mais 0.5 pontos\n")
                 acertos += 0.5 
