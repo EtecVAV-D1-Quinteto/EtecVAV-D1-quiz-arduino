@@ -31,3 +31,16 @@ As perguntas abordam os seguintes temas:
 3. Execute o arquivo no terminal:  
 ```bash
 python quiz-arduino.py
+
+📌 **Criadores**
+Este quiz foi desenvolvido pelo grupo "Quinteto", composto por:
+
+  Gabriel Salerno Ambrosio
+
+  Guilherme Moreira Zanato
+
+  Heitor de Lima Dias
+
+  Hércules Sousa Rodrigues
+
+  João Félix de Sousa
