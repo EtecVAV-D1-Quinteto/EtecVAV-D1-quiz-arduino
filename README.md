@@ -30,7 +30,7 @@ As perguntas abordam os seguintes temas:
 2. Baixe ou clone este repositório.  
 3. Execute o arquivo no terminal:  
 ```bash
-python quiz-arduino.py
+python quiz-arduino.py```
 
 📌 **Criadores**
 Este quiz foi desenvolvido pelo grupo "Quinteto", composto por:
