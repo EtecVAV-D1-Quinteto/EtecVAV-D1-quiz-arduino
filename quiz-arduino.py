@@ -260,8 +260,6 @@ perguntas =[
   "certa": "a"
 }
 ]
-
-
 # Código do quiz
 while True:
     menu()
@@ -273,10 +271,12 @@ while True:
         acertos = 0
         # Escolher as 20 perguntas aleatoriamente
         quiz = random.sample(perguntas, 20)
-
+        i = 0
         # Mostrar as perguntas, alternativas e respostas
         for p in quiz:
-            print("\n"+p["pergunta"])
+
+            print(f"\n{i+1}-)"+p["pergunta"])
+            i += 1
             for opcao in p["alternativas"]:
                 print(opcao)
             reposta = input("Sua resposta: ")
