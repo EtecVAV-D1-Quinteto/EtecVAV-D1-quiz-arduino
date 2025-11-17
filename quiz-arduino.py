@@ -1,0 +1,301 @@
+import random
+# Criação de uma função para o menu
+def menu():
+    inicio = print("Bem vindo ao Quiz Arduíno!!")
+    pergunta = print("\nO que deseja fazer: ")
+    alternativa1 = print("\n1-Iniciar quiz")
+    alternativa2 = print("\n2-Regras do quiz")
+    alternativa3 = print("\n3-Ecerrar programa")
+
+# Lista de 50 perguntas
+perguntas =[
+{
+        "pergunta": "O projeto Arduino foi criado originalmente em qual país?",
+        "alternativas": ["a) Estados Unidos", "b) Alemanha", "c) Itália", "d) Japão", "e) Canadá"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "O Arduino foi desenvolvido inicialmente em qual ano?",
+        "alternativas": ["a) 1999", "b) 2003", "c) 2005", "d) 2008", "e) 2010"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "Qual era o principal objetivo dos criadores do Arduino?",
+        "alternativas": ["a) Criar um sistema operacional para robôs", "b) Desenvolver um processador de alta performance", "c) Facilitar o uso de eletrônica e programação para estudantes e iniciantes", "d) Criar um substituto comercial para microcontroladores industriais", "e) Montar uma empresa de hardware proprietário"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "O nome 'Arduino' veio de:",
+        "alternativas": ["a) Um dos fundadores", "b) Uma abreviação de 'Automatic Digital Unit'", "c) O nome de um bar frequentado pelos criadores", "d) Uma sigla italiana para 'projeto aberto'", "e) Um termo técnico em latim"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "Um dos principais fundadores do Arduino é:",
+        "alternativas": ["a) Elon Musk", "b) Linus Torvalds", "c) Massimo Banzi", "d) Mark Zuckerberg", "e) Steve Wozniak"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "Qual é o modelo de placa Arduino mais popular e utilizado em projetos educacionais?",
+        "alternativas": ["a) Arduino Due", "b) Arduino Micro", "c) Arduino Mega", "d) Arduino Uno", "e) Arduino Nano"],
+        "certa": "d"
+    },
+    {
+        "pergunta": "Qual das placas abaixo possui mais pinos digitais e memória, sendo indicada para projetos maiores?",
+        "alternativas": ["a) Arduino Uno", "b) Arduino Mega 2560", "c) Arduino Leonardo", "d) Arduino Nano", "e) Arduino Mini"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Qual é a principal diferença entre o Arduino Uno e o Arduino Leonardo?",
+        "alternativas": ["a) O Leonardo usa microcontrolador ATmega32U4 com suporte nativo a USB", "b) O Leonardo tem mais memória que o Uno", "c) O Uno possui Wi-Fi embutido", "d) O Leonardo é feito apenas para robótica", "e) O Uno é menor que o Leonardo"],
+        "certa": "a"
+    },
+    {
+        "pergunta": "O Arduino Nano é uma versão:",
+        "alternativas": ["a) De mesa, com suporte a Ethernet", "b) Compacta, ideal para protótipos pequenos", "c) Voltada a sistemas industriais pesados", "d) Exclusiva para controle de motores", "e) Criada apenas para uso com sensores de temperatura"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Qual placa Arduino foi projetada para uso em Internet das Coisas (IoT), com conectividade Wi-Fi e Bluetooth integrados?",
+        "alternativas": ["a) Arduino Uno", "b) Arduino Nano Every", "c) Arduino MKR WiFi 1010", "d) Arduino Mega 2560", "e) Arduino Duemilanove"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "Ao montar um circuito com o Arduino, qual é a principal precaução ao ligar sensores e atuadores?",
+        "alternativas": ["a) Conectar todos os componentes diretamente aos pinos digitais sem resistores", "b) Ligar os dispositivos antes de conectar o Arduino à energia", "c) Utilizar resistores de valor adequado e conferir a polaridade dos componentes", "d) Alimentar todos os dispositivos com 12V diretamente dos pinos do Arduino", "e) Manter o circuito ligado enquanto faz modificações nos fios"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "O que pode acontecer se um componente for ligado incorretamente nos pinos do Arduino?",
+        "alternativas": ["a) Nada, o Arduino se ajusta automaticamente", "b) O Arduino desligará e se reiniciará sozinho", "c) Pode ocorrer superaquecimento ou queima do componente e da placa", "d) O LED da placa apenas piscará para avisar do erro", "e) Apenas o programa deixará de funcionar, sem danos físicos"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "Qual é a tensão máxima recomendada para alimentação da placa Arduino UNO através do pino 'Vin'?",
+        "alternativas": ["a) 3,3V", "b) 5V", "c) 9V a 12V", "d) 15V", "e) 24V"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "Para evitar curtos-circuitos e danos elétricos, é importante:",
+        "alternativas": ["a) Deixar os fios desencapados próximos uns dos outros", "b) Utilizar sempre uma protoboard e cabos bem encaixados", "c) Conectar fios enquanto o Arduino está ligado", "d) Usar componentes com corrente superior à suportada pelo Arduino", "e) Substituir o fusível da placa por um fio de cobre"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Quando o projeto exige correntes altas (como motores ou lâmpadas de alta potência), qual é a melhor prática?",
+        "alternativas": ["a) Alimentar tudo diretamente pelo pino 5V do Arduino", "b) Utilizar relés, transistores ou módulos de potência apropriados", "c) Aumentar a tensão de saída do Arduino com um conversor", "d) Ligar o motor diretamente a um pino digital", "e) Usar um resistor de 1Ω para reduzir a corrente"],
+        "certa": "b"
+    },
+     {
+        "pergunta": "Qual das opções abaixo representa uma aplicação prática comum do Arduino?",
+        "alternativas": ["a) Servir apenas como calculadora científica", "b) Controlar sistemas automatizados, como irrigação e iluminação", "c) Substituir diretamente um computador pessoal", "d) Executar jogos com gráficos avançados", "e) Usar como roteador de internet"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Em um projeto de casa inteligente, o Arduino pode ser usado para:",
+        "alternativas": ["a) Gerar energia elétrica", "b) Controlar o ar-condicionado, luzes e sensores de presença", "c) Transmitir dados de satélite", "d) Substituir o disjuntor principal da casa", "e) Produzir som de alta fidelidade"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "No controle de temperatura de uma estufa automatizada, o Arduino normalmente utiliza:",
+        "alternativas": ["a) Um motor de passo e uma tela LCD apenas", "b) Sensores de temperatura e atuadores como ventiladores", "c) Apenas LEDs coloridos para medir o calor", "d) Um resistor e um capacitor", "e) Nenhum sensor, apenas código de controle"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Em um projeto de robótica móvel, qual é a função principal do Arduino?",
+        "alternativas": ["a) Enviar comandos de internet via Wi-Fi", "b) Fazer o controle dos motores e leitura dos sensores para navegação", "c) Armazenar grandes bancos de dados", "d) Controlar exclusivamente o sistema de som do robô", "e) Servir como fonte de energia para os componentes"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Um exemplo de uso educacional do Arduino é:",
+        "alternativas": ["a) Ensinar fundamentos de eletrônica e programação por meio de experimentos práticos", "b) Substituir quadros e cadernos por circuitos eletrônicos", "c) Executar softwares de edição de vídeo", "d) Realizar cálculos complexos de engenharia sem programação", "e) Apenas montar brinquedos sem relação com aprendizado"],
+        "certa": "a"
+    },
+     {
+        "pergunta": "Qual das opções abaixo pode ser executada usando o comando loop()?",
+        "alternativas": ["a) Definir o começo de um comando", "b) Fazer o LED piscar repetidamente", "c) Encerrar o programa", "d) Definir o intervalo de um motor automático", "e) Fornecer um sinal para o motor"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Sobre a função setup(), qual é a afirmação correta?",
+        "alternativas": ["a) É usada para finalizar o programa", "b) Pode ser usada várias vezes durante o processo Arduino", "c) Prepara o programa para ser executado", "d) O nome 'setup' não é fixo e pode ser alterado", "e) Não é necessário usá-lo todas as vezes"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "As palavras para comando utilizadas na programação Arduino são escritas em:",
+        "alternativas": ["a) Português", "b) Inglês", "c) Espanhol", "d) Francês", "e) Uma linguagem própria da programação"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Sobre a função delay(), assinale a alternativa incorreta:",
+        "alternativas": ["a) Define um intervalo no meio da execução", "b) A unidade de medida usada é em minutos", "c) Durante o delay o programa não faz nada, senão uma pausa", "d) É útil para projetos simples", "e) No delay os botões não vão exercer sua função"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Sobre as bibliotecas no Arduino, qual a alternativa incorreta?",
+        "alternativas": ["a) São escritas em C/C++", "b) Ficam armazenadas em pastas específicas dentro da IDE", "c) Existem bibliotecas que podem ser instaladas manualmente", "d) São códigos quase prontos e que precisam ser ajustados", "e) Já vêm totalmente prontas e só precisam ser utilizadas"],
+        "certa": "e"
+    },
+    {
+        "pergunta": "Quais das funções abaixo são obrigatórias no Arduino?",
+        "alternativas": ["a) loop() e input()", "b) output() e input()", "c) delay() e setup()", "d) loop() e setup()", "e) output() e delay()"],
+        "certa": "d"
+    },
+    {
+        "pergunta": "Qual das palavras abaixo está incorreta em relação ao seu significado atribuído no Arduino?",
+        "alternativas": ["a) int = número inteiro", "b) float = número decimal", "c) char = fração", "d) boolean = verdadeiro/falso", "e) const = cria constantes fixas"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "Qual dos comandos abaixo não é usado em Arduino?",
+        "alternativas": ["a) import", "b) define", "c) include", "d) return", "e) break"],
+        "certa": "a"
+    },
+    {
+        "pergunta": "Dentre as opções abaixo, qual não está corretamente relacionada entre seu comando e área de atuação?",
+        "alternativas": ["a) Controle de fluxo = if, while", "b) Tempo = delay()", "c) Biblioteca = setup(), loop()", "d) Entrada e saída = pinMode()", "e) Variáveis = int, boolean"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "Qual a maneira correta de repetir várias vezes uma ação no Arduino?",
+        "alternativas": ["a) loop()", "b) delay()", "c) setup()", "d) pinMode()", "e) pause()"],
+        "certa": "a"
+    },
+     {
+        "pergunta": "O que o Arduino é, em sua essência?",
+        "alternativas": ["a) Um software de edição de texto para programadores", "b) Uma placa de circuito impresso que contém um microcontrolador e permite a programação para controlar componentes eletrônicos", "c) Um tipo de motor elétrico para robôs", "d) Um sistema operacional completo para computadores", "e) Uma linguagem de programação de alto nível"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Qual componente da placa Arduino Uno é responsável por executar o código que você escreve?",
+        "alternativas": ["a) A porta USB", "b) O pino GND", "c) O microcontrolador (chip principal)", "d) O LED de alimentação ('ON')", "e) O regulador de tensão"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "O que você deve conectar ao pino GND (Ground) do Arduino?",
+        "alternativas": ["a) A alimentação de 12V", "b) O lado positivo (ou 5V) dos componentes", "c) O lado negativo (ou terra) dos componentes eletrônicos externos", "d) A porta de comunicação serial", "e) A entrada analógica"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "A porta USB no Arduino é usada principalmente para quais duas funções?",
+        "alternativas": ["a) Apenas para conectar telas e monitores externos", "b) Apenas para aumentar a memória RAM da placa", "c) Alimentar a placa e fazer o upload (carregamento) do código", "d) Controlar apenas motores de passo", "e) Enviar sinais Wi-Fi"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "No software (IDE) do Arduino, o que o botão 'Verify' (Verificar) faz antes de carregar o código?",
+        "alternativas": ["a) Carrega o código diretamente para a placa Arduino", "b) Verifica se há erros de sintaxe ou ortografia no código", "c) Abre o Monitor Serial para depuração", "d) Cria um backup automático do projeto na nuvem", "e) Liga a placa"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Qual é a principal função da linha de código pinMode(13, OUTPUT); dentro do código Arduino?",
+        "alternativas": ["a) Ligar e desligar o pino 13 do Arduino", "b) Ler o valor de um sensor no pino 13", "c) Definir que o pino 13 será usado para enviar sinal (saída)", "d) Definir que o pino 13 será usado para receber sinal (entrada)", "e) Pausar o programa"],
+        "certa": "c"
+    },
+    {
+        "pergunta": "O que o comando digitalWrite(LED_BUILTIN, HIGH); faz em um projeto básico?",
+        "alternativas": ["a) Lê se o LED interno está ligado ou desligado", "b) Atrasar o programa por um segundo", "c) Mudar a cor do LED interno para azul", "d) Envia um sinal de 5V (alto) para ligar o LED interno da placa", "e) Inicializa a comunicação serial"],
+        "certa": "d"
+    },
+    {
+        "pergunta": "Em um código Arduino, qual das estruturas abaixo se repete infinitamente enquanto a placa estiver ligada?",
+        "alternativas": ["a) A função setup()", "b) A função loop()", "c) O comando delay()", "d) A inclusão de bibliotecas", "e) O comando pinMode()"],
+        "certa": "b"
+    },
+    {
+        "pergunta": "Se você quer acender um LED por um segundo e depois apagá-lo por um segundo, qual função você usaria para criar essa pausa de um segundo?",
+        "alternativas": ["a) delay()", "b) digitalWrite()", "c) analogRead()", "d) pinMode()", "e) Serial.begin()"],
+        "certa": "a"
+    },
+    {
+        "pergunta": "Um protoboard (também conhecido como placa de ensaio) é uma ferramenta essencial para Arduino porque permite:",
+        "alternativas": ["a) Rodar o código sem precisar da placa Arduino", "b) Fazer conexões elétricas temporárias entre componentes (LEDs, resistores, etc.) sem precisar de solda", "c) Aumentar a memória do microcontrolador", "d) Converter a voltagem 5V do Arduino para 220V", "e) Gravar o bootloader"],
+        "certa": "b"
+    },
+    {
+  "pergunta": "Qual é o microcontrolador utilizado no Arduino Uno R3?",
+  "alternativas": ["a) PIC16F877A", "b) ATmega328P", "c) ESP8266", "d) ARM Cortex-M4", "e) ATtiny85"],
+  "certa": "b"
+},
+{
+  "pergunta": "Qual componente é responsável por converter a alimentação USB em 5V regulados para a placa?",
+  "alternativas": ["a) Oscilador de cristal", "b) Regulador de tensão", "c) Conector ICSP", "d) Porta digital 13", "e) Conversor ADC"],
+  "certa": "b"
+},
+{
+  "pergunta": "Para que serve o pino VIN do Arduino Uno?",
+  "alternativas": ["a) Fornecer 3.3V para sensores", "b) Entrada para alimentação externa entre 7–12V", "c) Resetar o microcontrolador", "d) Enviar dados analógicos", "e) Ativar o PWM automaticamente"],
+  "certa": "b"
+},
+{
+  "pergunta": "O que o oscilador de cristal de 16 MHz faz na placa?",
+  "alternativas": ["a) Armazena o código do usuário", "b) Gera a referência de tempo para o microcontrolador", "c) Converte sinais analógicos em digitais", "d) Controla a tensão nos pinos digitais", "e) Protege contra sobrecarga elétrica"],
+  "certa": "b"
+},
+{
+  "pergunta": "Sobre a estrutura básica do Arduino, qual é a função do bootloader?",
+  "alternativas": ["a) Gerar tensão para o microcontrolador", "b) Permitir gravar código pela USB sem programador externo", "c) Converter sinais digitais em analógicos", "d) Aumentar o número de portas digitais", "e) Melhorar a comunicação serial"],
+  "certa": "b"
+},
+{
+  "pergunta": "Em um Arduino Uno, quais pinos são capazes de ler sinais analógicos?",
+  "alternativas": ["a) Apenas os pinos 0–5 da porta digital", "b) Apenas os pinos A0–A5", "c) Todos os pinos digitais configurados como entrada", "d) Apenas os pinos com símbolo '~'", "e) Apenas o pino A0"],
+  "certa": "b"
+},
+{
+  "pergunta": "O que caracteriza um sinal digital no Arduino?",
+  "alternativas": ["a) Qualquer valor entre 0 e 255", "b) Somente níveis altos e baixos (HIGH/LOW)", "c) Frequências variáveis entre 0 e 16 MHz", "d) Tensão sempre fixa em 3.3V", "e) Valores lidos apenas por conversão ADC"],
+  "certa": "b"
+},
+{
+  "pergunta": "Para que serve um pino marcado com '~' no Arduino Uno?",
+  "alternativas": ["a) Indica entrada analógica", "b) Indica saída de tensão regulada", "c) Indica capacidade de PWM", "d) Indica pino de interrupção obrigatória", "e) Indica comunicação SPI"],
+  "certa": "c"
+},
+{
+  "pergunta": "Qual afirmação descreve corretamente o PWM no Arduino?",
+  "alternativas": ["a) É um sinal analógico puro gerado por um DAC interno", "b) É um sinal digital que simula valores analógicos por variação de duty cycle", "c) É usado exclusivamente para comunicação serial", "d) Serve apenas para alimentar motores", "e) Mede tensão com alta precisão"],
+  "certa": "b"
+},
+{
+  "pergunta": "Qual porta do Arduino é usada para comunicação serial padrão (TX/RX)?",
+  "alternativas": ["a) Pinos digitais 0 (RX) e 1 (TX)", "b) A0 e A1", "c) Pinos 3 e 5", "d) Apenas a porta ICSP", "e) A porta VIN"],
+  "certa": "a"
+}
+]
+
+
+# Código do quiz
+while True:
+    menu()
+    resposta = input("\nEscolha uma opção: ")
+    
+    # Iniciar o quiz
+    if resposta == "1":
+        print("Inciando quiz...")
+        acertos = 0
+        # Escolher as 20 perguntas aleatoriamente
+        quiz = random.sample(perguntas, 20)
+
+        # Mostrar as perguntas, alternativas e respostas
+        for p in quiz:
+            print("\n"+p["pergunta"])
+            for opcao in p["alternativas"]:
+                print(opcao)
+            reposta = input("Sua resposta: ")
+
+            if reposta == p["certa"]:
+                print("\nAlternativa certa!! Mais 0.5 pontos\n")
+                acertos += 0.5 
+            else:
+                print("\nAlternativa incorreta. A reposta era ",p["certa"],"\n")
+        print("Sua pontuação no quiz foi ",acertos,"\n\n\n")
+
+    # Regras do quiz
+    elif resposta == "2":
+        print("\n\n\nNo quiz haverá 20 perguntas sorteadas sobre Arduíno")
+        print("\nTerão alternativas de A até E")
+        print("\nA cada questão que você acertar, irá ganhar 0,5 pontos, e a pontuação máxima é 10, ao final do quiz a pontuação será exibida na tela")
+        print("\nAs perguntas terão 10 temas, são eles:\n1-Histórico\n2-Modelos e famílias de placas\n3-componentes e arquiteturas básicas\n4-Conexões, portas e sinais\n5-Estruturas de código\n6-Principais comandos e funções da IDE Arduíno\n7-Sensores,atuadoras e shields\n8-Comunicações\n9-Boas práticas e segurança elétrica\n10-Casos de uso e aplicações práticas")   
+    
+    # Ecerrar o programa
+    elif resposta == "3":
+        print("Programa encerrado.")
+        break
