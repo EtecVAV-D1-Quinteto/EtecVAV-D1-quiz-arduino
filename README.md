@@ -25,19 +25,6 @@ As perguntas abordam os seguintes temas:
 - Boas práticas e segurança elétrica  
 - Casos de uso e aplicações práticas
 
-📌 **Criadores**
-Este quiz foi desenvolvido pelo grupo "Quinteto", composto por:
-
-  Gabriel Salerno Ambrosio
-
-  Guilherme Moreira Zanato
-
-  Heitor de Lima Dias
-
-  Hércules Sousa Rodrigues
-
-  João Félix de Sousa
-
 💻 **Como usar**  
 1. Tenha o Python 3 instalado no seu computador.  
 2. Baixe ou clone este repositório.  
